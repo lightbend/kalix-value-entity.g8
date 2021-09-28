@@ -1,5 +1,7 @@
 organization := "$package$"
 
+scalaVersion := "$scala_version$"
+
 enablePlugins(AkkaserverlessPlugin, JavaAppPackaging, DockerPlugin)
 dockerBaseImage := "docker.io/library/adoptopenjdk:11-jre-hotspot"
 dockerUsername := sys.props.get("docker.username")
