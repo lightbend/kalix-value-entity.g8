@@ -1,20 +1,17 @@
 # $name$
 
-#[[
 ## Designing
-]]#
+
 While designing your service it is useful to read [designing services](https://developer.lightbend.com/docs/akka-serverless/services/development-process.html)
 
-#[[
 ## Developing
-]]#
+
 This project has a bare-bones skeleton service ready to go, but in order to adapt and
 extend it it may be useful to read up on [developing services](https://developer.lightbend.com/docs/akka-serverless/developing/index.html)
 and in particular the [JVM section](https://developer.lightbend.com/docs/akka-serverless/java-services/index.html)
 
-#[[
 ## Building
-]]#
+
 You can use [sbt](https://www.scala-sbt.org/) to build your project,
 which will also take care of generating code based on the `.proto` definitions:
 
@@ -22,9 +19,8 @@ which will also take care of generating code based on the `.proto` definitions:
 sbt compile
 ```
 
-#[[
 ## Running Locally
-]]#
+
 In order to run your application locally, you must run the Akka Serverless proxy. The included `docker-compose` file contains the configuration required to run the proxy for a locally running application.
 It also contains the configuration to start a local Google Pub/Sub emulator that the Akka Serverless proxy will connect to.
 To start the proxy, run the following command from this directory:
@@ -61,9 +57,8 @@ ERROR:
 > Note: The failure is to be expected if you have not yet provided an implementation of `GetCurrentCounter` in
 > your entity.
 
-#[[
 ## Deploying
-]]#
+
 To deploy your service, install the `akkasls` CLI as documented in
 [Setting up a local development environment](https://developer.lightbend.com/docs/akka-serverless/setting-up/)
 and configure a Docker Registry to upload your docker image to.
