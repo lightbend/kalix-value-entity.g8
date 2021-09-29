@@ -17,3 +17,7 @@ Compile / scalacOptions ++= Seq(
   "-Xlint")
 Compile / javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation", "-parameters" // for Jackson
 )
+
+libraryDependencies ++= Seq(
+  "org.scalatest" %% "scalatest" % "3.2.7" % Test
+)
