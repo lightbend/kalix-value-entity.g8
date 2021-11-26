@@ -2,13 +2,13 @@
 
 ## Designing
 
-While designing your service it is useful to read [designing services](https://developer.lightbend.com/docs/akka-serverless/services/development-process.html)
+While designing your service it is useful to read [designing services](https://developer.lightbend.com/docs/akka-serverless/services/development-process.html).
 
 ## Developing
 
 This project has a bare-bones skeleton service ready to go, but in order to adapt and
 extend it it may be useful to read up on [developing services](https://developer.lightbend.com/docs/akka-serverless/developing/index.html)
-and in particular the [JVM section](https://developer.lightbend.com/docs/akka-serverless/java-services/index.html)
+and in particular the [JVM section](https://developer.lightbend.com/docs/akka-serverless/java-services/index.html).
 
 ## Building
 
@@ -21,7 +21,7 @@ sbt compile
 
 ## Running Locally
 
-In order to run your application locally, you must run the Akka Serverless proxy. The included `docker-compose` file contains the configuration required to run the proxy for a locally running application.
+In order to run your application locally, you must run the Akka Serverless proxy. The included `docker-compose.yml` file contains the configuration required to run the proxy for a locally running application.
 It also contains the configuration to start a local Google Pub/Sub emulator that the Akka Serverless proxy will connect to.
 To start the proxy, run the following command from this directory:
 
@@ -40,7 +40,7 @@ sbt run
 
 With both the proxy and your application running, any defined endpoints should be available at `http://localhost:9000`. In addition to the defined gRPC interface, each method has a corresponding HTTP endpoint. Unless configured otherwise (see [Transcoding HTTP](https://developer.lightbend.com/docs/akka-serverless/java/proto.html#_transcoding_http)), this endpoint accepts POST requests at the path `/[package].[entity name]/[method]`. For example, using `curl`:
 
-```
+```shell
 > curl -XPOST -H "Content-Type: application/json" localhost:9000/$package$.CounterService/GetCurrentCounter -d '{"counterId": "foo"}'
 The command handler for `GetCurrentCounter` is not implemented, yet
 ```
@@ -61,7 +61,7 @@ ERROR:
 
 To deploy your service, install the `akkasls` CLI as documented in
 [Setting up a local development environment](https://developer.lightbend.com/docs/akka-serverless/setting-up/)
-and configure a Docker Registry to upload your docker image to.
+and configure a Docker Registry to upload your Docker image to.
 
 You will need to set your `docker.username` as a system property:
 
@@ -70,8 +70,8 @@ sbt -Ddocker.username=mary docker:publish
 ```
 
 Refer to [Configuring registries](https://developer.lightbend.com/docs/akka-serverless/projects/container-registries.html)
-for more information on how to make your docker image available to Akka Serverless.
+for more information on how to make your Docker image available to Akka Serverless.
 
 Finally you can or use the [Akka Serverless Console](https://console.akkaserverless.com)
 to create a project and then deploy your service into the project
-through the `akkasls` CLI or via the web interface.
+through the `akkasls` CLI.
