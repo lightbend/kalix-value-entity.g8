@@ -8,6 +8,7 @@ dockerUsername := sys.props.get("docker.username")
 dockerRepository := sys.props.get("docker.registry")
 dockerUpdateLatest := true
 ThisBuild / dynverSeparator := "-"
+run / fork := true
 
 Compile / scalacOptions ++= Seq(
   "-target:11",
