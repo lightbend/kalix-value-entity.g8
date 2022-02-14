@@ -9,6 +9,7 @@ dockerRepository := sys.props.get("docker.registry")
 dockerUpdateLatest := true
 ThisBuild / dynverSeparator := "-"
 run / fork := true
+run / envVars += ("HOST", "0.0.0.0")
 
 Compile / scalacOptions ++= Seq(
   "-target:11",
