@@ -5,8 +5,9 @@ lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
   .settings(
     name := "akkaserverless-value-entity",
-    test in Test := {
-      val _ = (g8Test in Test).toTask("").value
+    g8TestScript := file("./src/test/g8/test"),
+    Test / test := {
+      val _ = (Test / g8Test).toTask("").value
     },
     scriptedLaunchOpts ++= List("-Xms1024m", "-XX:ReservedCodeCacheSize=128m", "-XX:MaxMetaspaceSize=256m", "-Xss2m", "-Dfile.encoding=UTF-8"),
     resolvers += Resolver.sonatypeRepo("snapshots")
