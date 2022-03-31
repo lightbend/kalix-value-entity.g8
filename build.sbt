@@ -4,7 +4,7 @@
 lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
   .settings(
-    name := "akkaserverless-value-entity",
+    name := "kalix-value-entity",
     g8TestScript := file("./src/test/g8/test"),
     Test / test := {
       val _ = (Test / g8Test).toTask("").value

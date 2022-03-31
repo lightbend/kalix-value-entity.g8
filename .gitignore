@@ -1,6 +1,9 @@
 /target
 /project/target
 /project/plugins/project/
+/project/project
 boot/
 lib_managed/
 src_managed/
+.bsp
+.idea
