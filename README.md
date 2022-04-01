@@ -1,5 +1,5 @@
 # Kalix Value Entity template
-
+ 
 This is a template setting up a Scala [Kalix](https://docs.kalix.io/) project
 with a [Value Entity](https://docs.kalix.io/java/value-entity.html).
 
