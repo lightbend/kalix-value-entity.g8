@@ -20,7 +20,7 @@ run / fork := true
 run / envVars += ("HOST", "0.0.0.0")
 
 Compile / scalacOptions ++= Seq(
-  "-target:11",
+  "-release:11",
   "-deprecation",
   "-feature",
   "-unchecked",
