@@ -18,6 +18,7 @@ dockerBuildCommand := {
 ThisBuild / dynverSeparator := "-"
 run / fork := true
 run / envVars += ("HOST", "0.0.0.0")
+run / javaOptions ++= Seq("-Dlogback.configurationFile=logback-dev-mode.xml")
 
 Compile / scalacOptions ++= Seq(
   "-release:11",
