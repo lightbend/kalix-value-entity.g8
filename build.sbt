@@ -10,5 +10,5 @@ lazy val root = (project in file("."))
       val _ = (Test / g8Test).toTask("").value
     },
     scriptedLaunchOpts ++= List("-Xms1024m", "-XX:ReservedCodeCacheSize=128m", "-XX:MaxMetaspaceSize=256m", "-Xss2m", "-Dfile.encoding=UTF-8"),
-    resolvers += Resolver.sonatypeRepo("snapshots")
+    resolvers ++= Resolver.sonatypeOssRepos("snapshots")
   )
