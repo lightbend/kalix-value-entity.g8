@@ -2,8 +2,10 @@ organization := "$package$"
 
 scalaVersion := "$scala_version$"
 
+resolvers += "Akka library repository".at("https://repo.akka.io/maven")
+
 enablePlugins(KalixPlugin, JavaAppPackaging, DockerPlugin)
-dockerBaseImage := "docker.io/library/adoptopenjdk:11-jre-hotspot"
+dockerBaseImage := "docker.io/library/eclipse-temurin:21.0.2_13-jre-jammy"
 dockerUsername := sys.props.get("docker.username")
 dockerRepository := sys.props.get("docker.registry")
 dockerUpdateLatest := true
@@ -31,5 +33,5 @@ Compile / javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation", "-param
 )
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "3.2.7" % Test
+  "org.scalatest" %% "scalatest" % "3.2.18" % Test
 )
